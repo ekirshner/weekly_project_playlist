@@ -1,0 +1,41 @@
+.App-header {
+  background-color: #6B6D6D;
+  height: 75px;
+  position: fixed;
+  width: 100%;
+  top: 0; }
+  .App-header h2 {
+    color: white;
+    margin: 2%;
+    position: relative;
+    top: 18px; }
+
+.navbar {
+  text-align: right; }
+  .navbar a {
+    color: #E076A8;
+    text-decoration: none;
+    margin: 2%;
+    float: right; }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1%; }
+  .container img {
+    width: 50%;
+    height: 50%; }
+  .container .playlist {
+    width: 50%; }
+
+.playlistItems {
+  border: 1px dashed black;
+  width: 100%;
+  font-size: 12px;
+  padding: 1%; }
+
+.input-box-add-song {
+  display: flex;
+  flex-direction: column; }
+
+/*# sourceMappingURL=app.css.map */

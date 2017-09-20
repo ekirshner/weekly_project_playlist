@@ -1,0 +1,59 @@
+$header: #1A0F51;
+$font: #6D326D;
+$font2: #3693C1;
+$font3: #E076A8;
+$font4: #FFFFFF;
+$font5: #6B6D6D;
+
+.App-header {
+    background-color: $font5; 
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    h2 {
+        color: white;
+        margin: 2%;
+        position: relative;
+        top: 18px;
+    }
+}
+
+.navbar {
+   text-align: right;
+    a {
+        color: $font3;
+        text-decoration: none;
+        margin: 2%;
+        float: right;
+    }
+}
+
+.container {
+    // background-image: url('http://s3.thingpic.com/images/Km/wVHraPSdTjz64FdnCKVjSYqp.jpeg');
+    // background-attachment: fixed;
+    // background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+    img {
+         width: 50%;
+         height: 50%;
+    }
+    .playlist {
+        width: 50%;
+    }
+}
+
+.playlistItems {
+    border: 1px dashed black;
+    width: 100%;
+    font-size: 12px;
+    padding: 1%;
+}
+
+.input-box-add-song {
+    display: flex;
+    flex-direction: column;
+
+}
