@@ -31,6 +31,3 @@ class PlaylistItem extends Component {
 
 
 export { PlaylistItem };
-
-//try toggling the button words with this:
-// {{backgroundColor: this.state.color ? this.state.color : "red"}}

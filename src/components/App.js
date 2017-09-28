@@ -64,7 +64,6 @@ class App extends Component {
   }
 
   onSearchChange(event) {
-        console.log(event.target.value)
         this.setState({
             searchText: event.target.value
         }, () => {
@@ -107,5 +106,3 @@ class App extends Component {
 }
 
 export default App;
-    
-//** Search doesn't work. It grabs the search term, but filtering & rendering aren't returning anything
