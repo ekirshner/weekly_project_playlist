@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { songsArr } from './PlaylistItem';
 
 class PlaylistForm extends Component {
     constructor(props) {
@@ -36,10 +35,6 @@ class PlaylistForm extends Component {
         this.props.handleSongSubmission(this.state);
     }
 
-
-        // If this doesn't update the screen, its because you're not calling this.setState().
-        // Consider keeping the list of songs in the App
-
     
     render() {
         return (
@@ -48,7 +43,7 @@ class PlaylistForm extends Component {
                 <input onChange={event => this.updateSong(event)} type="text" name="name" value={this.state.name} placeholder="Song Name" />
                 <input onChange={event => this.updateArtist(event)} type="text" name="artist" value={this.state.artist} placeholder="Artist" />
                 <input onChange={event => this.updateNotes(event)} type="text" name="notes" value={this.state.notes} placeholder="Notes" />
-                <input type="submit" onClick = {event => this.submitSong(event)} name="submitNewSong" value="Add Song to List" />
+                <input className="addButton" type="submit" onClick = {event => this.submitSong(event)} name="submitNewSong" value="Add Song to List" />
             </div>
         );
 

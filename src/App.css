@@ -1,9 +1,10 @@
+body {
+  font-family: 'Poiret One', cursive; }
+
 .App-header {
   background-color: #6B6D6D;
   height: 75px;
-  position: fixed;
-  width: 100%;
-  top: 0; }
+  width: 100%; }
   .App-header h2 {
     color: white;
     margin: 2%;
@@ -19,23 +20,64 @@
     float: right; }
 
 .container {
+  background-color: white;
   display: flex;
   justify-content: space-between;
-  margin: 1%; }
+  margin: 1%;
+  padding: 5px; }
   .container img {
     width: 50%;
     height: 50%; }
   .container .playlist {
-    width: 50%; }
+    width: 70%;
+    padding: 1%;
+    background-color: #F8F8F8; }
 
 .playlistItems {
-  border: 1px dashed black;
-  width: 100%;
+  background-color: white;
   font-size: 12px;
-  padding: 1%; }
+  padding: 1%;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888888; }
 
 .input-box-add-song {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  padding: 1%;
+  margin-right: 10px;
+  height: 170px;
+  background-color: #F8F8F8; }
+
+.playlistItems,
+input {
+  margin-bottom: 10px; }
+
+button,
+.addButton {
+  background-color: #6D326D;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+  border-color: #6D326D;
+  cursor: pointer; }
+
+button:focus,
+.addButton:focus {
+  outline: 0; }
+
+h1 {
+  font-size: 15px;
+  color: #1A0F51;
+  color: #E076A8; }
+
+.App-header,
+.playlist,
+.input-box-add-song,
+.playlistItems {
+  box-shadow: 2px 2px 10px #888888; }
+
+span {
+  color: #3693C1;
+  font-weight: bold; }
 
 /*# sourceMappingURL=app.css.map */

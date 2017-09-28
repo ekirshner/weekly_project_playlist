@@ -10,11 +10,12 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.favoriteClick = this.favoriteClick.bind(this)
-    this.handleSongSubmission = this.handleSongSubmission.bind(this)
+    this.favoriteClick = this.favoriteClick.bind(this);
+    this.handleSongSubmission = this.handleSongSubmission.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
+    this.searchSongs = this.searchSongs.bind(this);
 
-    this.state = {
-      songsArr: [
+    let songsArr = [
         {
           name: "Fly Me to the Moon",
           artist: "Frank Sinatra",
@@ -27,30 +28,61 @@ class App extends Component {
           notes: "Another Great Song",
           favorited: false
         }
-      ]
+      ];
+
+    this.state = {
+      searchText: '',
+      songsArr: songsArr,  
+      searchedSongs: songsArr    
     };
   }
 
+  
   favoriteClick(song) {
-    console.log('this is favorited')
-    console.log(song)
+    if(song.favorited === true) {
+      song.favorited = false;
+    } else {
+      song.favorited = true;
+    }
+
     this.setState({
       songsArr: this.state.songsArr
     })
   }
 
   handleSongSubmission(event) {
-    console.log(event)
     this.state.songsArr.push({
       name: event.name,
       artist: event.artist,
       notes: event.notes,
       favorited: event.favorited,
-    });
-    console.log(this.state.songsArr)
-    this.setState({
-      songsArr: this.state.songsArr
     })
+   
+    this.setState({
+      searchedSongs: this.state.songsArr
+    })
+  }
+
+  onSearchChange(event) {
+        console.log(event.target.value)
+        this.setState({
+            searchText: event.target.value
+        }, () => {
+            this.searchSongs()
+        })
+    }
+
+  searchSongs() {
+    let songs = this.state.songsArr;
+    let searchText = this.state.searchText;
+
+    songs = songs.filter(function (song) {
+      return song.name.indexOf(searchText) !== -1;
+    })
+
+    this.setState({
+      searchedSongs: songs
+    });
   }
 
 
@@ -64,7 +96,10 @@ class App extends Component {
 
         <div className="container">
           <PlaylistForm songsArr={this.state.songsArr} handleSongSubmission={(event) => this.handleSongSubmission(event)} />
-          <Playlist songsArr={this.state.songsArr} onFavClick={song => this.favoriteClick(song)} />
+          <Playlist songsArr={this.state.searchedSongs} 
+            onFavClick={song => this.favoriteClick(song)} 
+            onSearchChange={text => this.onSearchChange(text)} 
+            searchText={this.state.searchText} /> 
         </div>
       </div>
     );
@@ -72,9 +107,5 @@ class App extends Component {
 }
 
 export default App;
-
-//TODO:
-// Move the songsArray to the App.js component. call it with props (songs={this.state.songs}) <-- see above
-//do it for playlistForm too. 
-//get rid of songsArray from playlistitem
-//swap out songsArr.map in playlistitem for the new this.state.songs
+    
+//** Search doesn't work. It grabs the search term, but filtering & rendering aren't returning anything
